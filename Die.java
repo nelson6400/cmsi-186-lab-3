@@ -8,8 +8,10 @@ import java.util.Random;
  */
 public class Die {
     private static Random random = new Random();
+    public static final String SIX_SIDED_DIE_EMOJI = "🎲";
 
-    // TODO: Add fields
+    private int value;
+    private final int sides;
 
     /**
      * Constructs a die with the given number of sides and starting value.
@@ -17,7 +19,17 @@ public class Die {
      * if the starting value is not consistent with the number of sides.
      */
     public Die(int sides, int value) {
-        // TODO
+        if (sides < 4){
+            throw new IllegalArgumentException("At least four sides required");
+        }
+        if (value < 1) {
+            throw new IllegalArgumentException("Die value not legal for die shape");
+        }
+        if (value > sides){
+            throw new IllegalArgumentException("Die value not legal for die shape");
+        }
+        this.sides = sides;
+        this.value = value;
     }
 
     /**
@@ -25,28 +37,29 @@ public class Die {
      * mutating the die's value, this method also returns the new updated value.
      */
     public int roll() {
-        // TODO
+        return value = random.nextInt(sides) + 1;
     }
 
     /**
      * Returns the number of sides of this die.
      */
     public int getSides() {
-        // TODO
+        return sides;
     }
 
     /**
      * Returns the value of this die.
      */
     public int getValue() {
-        // TODO
+        return value;
     }
 
     /**
      * Returns a description of this die, which is its value enclosed in square
      * brackets, without spaces, for example "[5]".
      */
-    @Override public String toString() {
-        // TODO
+    @Override 
+    public String toString() {
+        return "[" + value + "]";
     }
 }
