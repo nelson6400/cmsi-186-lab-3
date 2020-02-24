@@ -1,7 +1,3 @@
 # CMSI 186 Lab 3 High Roller Starter Code
 
-This repository contains some unfinished Java programs that you are complete.
-
-Import this repository into a new repository of your own and write the code according to the lab [instructions](https://cs.lmu.edu/~ray/classes/plab/lab/3/). Use the provided test scripts.
-
-In your new repository, don’t forget to edit this README file, as _your_ repository will certainly not contain any unfinished Java programs.
+This repository contains a finished Dice game using Java script code.
